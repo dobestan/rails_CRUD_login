@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user.password = Digest::MD5.hexdigest(params[:password])
     @user.save
 
-    redirect_to "/users/new"
+    redirect_to "/users/home"
   end
  
 
@@ -28,6 +28,13 @@ class UsersController < ApplicationController
     @user.password = Digest::MD5.hexdigest(params[:password])
     @user.save
 
-    redirect_to "/users/new"
+    redirect_to "/users/home"
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to "/users/home"
   end
 end
