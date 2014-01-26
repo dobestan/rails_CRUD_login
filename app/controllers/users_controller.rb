@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def home
+    @users = User.all
   end
 
   #new -> create
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
 
     redirect_to "/users/new"
   end
+ 
 
   def edit
   end
