@@ -20,8 +20,14 @@ class UsersController < ApplicationController
  
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.password = Digest::MD5.hexdigest(params[:password])
+    @user.save
+
+    redirect_to "/users/new"
   end
 end

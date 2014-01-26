@@ -1,0 +1,6 @@
+<h1>EDIT</h1>
+<h2>USERNAME : <%= @user.username %></h2>
+<form action="/users/update/<%= @user.id %>">
+    <input type="password" name="password" placeholder="New Password" />
+    <input type="submit" value="change password" />
+</form>
